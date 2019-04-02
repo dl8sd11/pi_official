@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href='{% static "Semantic-UI-CSS-master/semantic.css" %}'>
+        <link rel="stylesheet" href='{% static "main_site/style.css" %}'>
+        <title>PI</title>
+    </head>
+    <body>
+            <div class="ui top fixed menu">
+                <a class="item" href="/home">首頁</a>
+                <a class="item">Agenda</a>
+                <a class="item" href="/api/query">Q&A</a>
+                <a class="item" href="/api/submit">我要提問</a>
+            </div>
+            {% block content %}
+            {% endblock%}
+
+    </body>
+</html>

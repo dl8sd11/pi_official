@@ -1,0 +1,21 @@
+{% extends 'main_site/base.html' %}
+{% block content %}
+<div class="ui container">
+    <form action="/api/submit" method="POST" class="ui form">
+        {% csrf_token %}
+        <div class="field">
+            <label>你的名子</label>
+            <input type="text" name="name" placeholder="君の名は">
+        </div>
+        <div class="field">
+            <label>問題標題</label>
+            <input type="text" name="title" placeholder="問題標題">
+        </div>
+        <div class="field">
+            <label>問題內容</label>
+            <textarea name="content"></textarea>
+        </div>
+        <input type="submit" class="ui submit button" value="submit">
+    </form>
+</div>
+{% endblock %}
