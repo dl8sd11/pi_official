@@ -28,5 +28,9 @@ def response_questions(request,id):
         return view_questions(request)
     else:
         return render(request,"main_site/response_question.html",{"question":question})
+
+def view_agenda(request):
+    return render(request,"main_site/agenda.html")
+
 def index(request):
     return render(request,'main_site/index.html',)

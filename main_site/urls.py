@@ -8,5 +8,6 @@ urlpatterns = [
     path('api/query',views.view_questions, name='view_questions'),
     path('api/submit',views.submit_questions, name='submit_questions'),
     path('api/view',views.view_questions,name='view_questions'),
+    path('agenda',views.view_agenda,name='view_agenda'),
     path('api/response/<int:id>',views.response_questions,name='response_questions'),
 ]

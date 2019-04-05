@@ -10,12 +10,18 @@
     <body>
             <div class="ui top fixed menu">
                 <a class="item" href="/home">首頁</a>
-                <a class="item">Agenda</a>
+                <a class="item" href="/agenda">議程表</a>
                 <a class="item" href="/api/query">Q&A</a>
                 <a class="item" href="/api/submit">我要提問</a>
             </div>
             {% block content %}
             {% endblock%}
 
+    
+            <footer>
+                <div class="ui container center aligned">
+                    © Copyright 2019 國立科學工業園區實驗高級中學
+                </div>
+            </footer>
     </body>
 </html>
