@@ -5,6 +5,7 @@ from django.utils import timezone
 class Question(models.Model):
     asker = models.TextField()
     title = models.TextField()
+    cat = models.TextField()
     content = models.TextField()
     time = models.DateTimeField()
     seen = models.BooleanField()

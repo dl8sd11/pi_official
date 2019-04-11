@@ -12,10 +12,40 @@
             <input type="text" name="title" placeholder="問題標題">
         </div>
         <div class="field">
+          <label>類型</label>
+          <div class="ui fluid selection dropdown">
+            <input type="hidden" name="gender">
+            <div class="default text">選擇類型</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <div class="item" data-value="math">數學</div>
+              <div class="item" data-value="phy">物理</div>
+              <div class="item" data-value="che">化學</div>
+              <div class="item" data-value="bio">生物</div>
+              <div class="item" data-value="infor">資訊</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
             <label>問題內容</label>
             <textarea name="content"></textarea>
         </div>
         <input type="submit" class="ui submit button" value="submit">
+        <div class="ui error message"></div>
     </form>
-</div>
+
+
+<script>
+$('.ui.dropdown')
+.dropdown();
+$('.ui.form')
+  .form({
+    fields: {
+      name: 'empty',
+      title: 'empty',
+      content: 'empty',
+    }
+  });
+</script>
 {% endblock %}

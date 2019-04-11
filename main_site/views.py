@@ -6,12 +6,15 @@ def view_questions(request):
 
 def submit_questions(request):
     if request.method == "POST":
-        new_question = Question()
-        new_question.asker = request.POST['name']
-        new_question.title = request.POST['title']
-        new_question.content = request.POST['content']
-        new_question.submit()
-        return view_questions(request)
+        if request.POST['name'] and request.POST['title'] and request.POST['content']:
+            new_question = Question()
+            new_question.asker = request.POST['name']
+            new_question.title = request.POST['title']
+            new_question.content = request.POST['content']
+            new_question.submit()
+            return view_questions(request)
+        else:
+            return render(request,"main_site/submit_question.html")
     else:
         return render(request,"main_site/submit_question.html")
 

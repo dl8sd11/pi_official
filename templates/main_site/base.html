@@ -5,9 +5,15 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href='{% static "Semantic-UI-CSS-master/semantic.css" %}'>
         <link rel="stylesheet" href='{% static "main_site/style.css" %}'>
-        <title>PI</title>
-    </head>
-    <body>
+        <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+        
+            <title>PI</title>
+        </head>
+        <body>
+            <script src='{% static "Semantic-UI-CSS-master/semantic.js" %}'></script>
             <div class="ui top fixed menu">
                 <a class="item" href="/home">首頁</a>
                 <a class="item" href="/agenda">議程表</a>
@@ -16,12 +22,12 @@
             </div>
             {% block content %}
             {% endblock%}
-
-    
+            
+            
             <footer>
                 <div class="ui container center aligned">
                     © Copyright 2019 國立科學工業園區實驗高級中學
                 </div>
             </footer>
-    </body>
-</html>
+        </body>
+        </html>
