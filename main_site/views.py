@@ -1,8 +1,5 @@
 from django.shortcuts import render
 from main_site.models import Question
-def view_questions(request):
-    question_list = Question.objects.all()
-    return render(request,"main_site/question_answer.html",{"questions":question_list})
 
 def submit_questions(request):
     if request.method == "POST":
@@ -11,6 +8,7 @@ def submit_questions(request):
             new_question.asker = request.POST['name']
             new_question.title = request.POST['title']
             new_question.content = request.POST['content']
+            new_question.cat = request.POST['cat']
             new_question.submit()
             return view_questions(request)
         else:
@@ -21,6 +19,9 @@ def submit_questions(request):
 def view_questions(request):
     question_list = Question.objects.all()
     return render(request,"main_site/view_question.html",{"questions":question_list})
+def super_view_questions(request):
+    question_list = Question.objects.all()
+    return render(request,"main_site/super_view_question.html",{"questions":question_list})
 
 def response_questions(request,id):
     question = Question.objects.get(id=id)

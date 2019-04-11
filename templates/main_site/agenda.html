@@ -1,7 +1,7 @@
 {% extends 'main_site/base.html' %}
 {% block content %}
 <div class="ui container tb">
-    <table class="ui selectable table">
+    <table class="ui selectable table" id="agenda">
         <thead>
             <tr>
             <th class="center aligned">時間</th>
@@ -39,5 +39,32 @@
     </table>
 </div>
 
+<div class="ui modal" id="mb1">
+    <i class="close icon"></i>
+    <div class="header">
+        議程介紹
+    </div>
+    <div class="image content">
+        <div class="description">
+            <div class="ui header">組別標題</div>
+            <p>內容</p>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui positive button">
+        報告書
+        </div>
+    </div>
+</div>
 
+<script>
+$('#agenda').find('tr').click( function(){
+    $('#mb1')
+      .modal('show')
+    ;
+    // $('#mb'+($(this).index()+1))
+    //   .modal('show')
+    // ;
+});
+</script>
 {% endblock %}

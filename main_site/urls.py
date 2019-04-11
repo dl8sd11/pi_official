@@ -5,9 +5,9 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('home', views.index, name='index'),
-    path('api/query',views.view_questions, name='view_questions'),
-    path('api/submit',views.submit_questions, name='submit_questions'),
-    path('api/view',views.view_questions,name='view_questions'),
+    path('submit',views.submit_questions, name='submit_questions'),
+    path('view',views.view_questions,name='view_questions'),
+    path('api/super/view',views.super_view_questions,name='super_view_questions'),
     path('agenda',views.view_agenda,name='view_agenda'),
     path('api/response/<int:id>',views.response_questions,name='response_questions'),
 ]

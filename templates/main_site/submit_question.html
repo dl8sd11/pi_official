@@ -5,7 +5,7 @@
         {% csrf_token %}
         <div class="field">
             <label>你的名字</label>
-            <input type="text" name="name" placeholder="君の名は">
+            <input type="text" name="name" placeholder="你的名字">
         </div>
         <div class="field">
             <label>問題標題</label>
@@ -14,15 +14,16 @@
         <div class="field">
           <label>類型</label>
           <div class="ui fluid selection dropdown">
-            <input type="hidden" name="gender">
+            <input type="hidden" name="cat">
             <div class="default text">選擇類型</div>
             <i class="dropdown icon"></i>
             <div class="menu">
-              <div class="item" data-value="math">數學</div>
-              <div class="item" data-value="phy">物理</div>
-              <div class="item" data-value="che">化學</div>
-              <div class="item" data-value="bio">生物</div>
-              <div class="item" data-value="infor">資訊</div>
+              <div class="item" data-value="一般">一般</div>
+              <div class="item" data-value="數學組">數學</div>
+              <div class="item" data-value="物理組">物理</div>
+              <div class="item" data-value="化學組">化學</div>
+              <div class="item" data-value="生物組">生物</div>
+              <div class="item" data-value="資訊組">資訊</div>
             </div>
           </div>
         </div>
