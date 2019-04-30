@@ -14,11 +14,12 @@
         </head>
         <body>
             <script src='{% static "Semantic-UI-CSS-master/semantic.js" %}'></script>
-            <div class="ui top fixed menu">
+            <div class="ui top fixed menu stackable">
                 <a class="item" href="/home">首頁</a>
                 <a class="item" href="/agenda">議程表</a>
                 <a class="item" href="/view">Q&A</a>
                 <a class="item" href="/submit">我要提問</a>
+                <a class="item" href="/paper">手冊</a>
             </div>
             {% block content %}
             {% endblock%}

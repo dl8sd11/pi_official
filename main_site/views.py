@@ -19,6 +19,10 @@ def submit_questions(request):
 def view_questions(request):
     question_list = Question.objects.all()
     return render(request,"main_site/view_question.html",{"questions":question_list})
+
+def view_paper(request):
+    return render(request,"main_site/view_paper.html")
+
 def super_view_questions(request):
     question_list = Question.objects.all()
     return render(request,"main_site/super_view_question.html",{"questions":question_list})
