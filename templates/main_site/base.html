@@ -3,8 +3,10 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href='{% static "Semantic-UI-CSS-master/semantic.css" %}'>
         <link rel="stylesheet" href='{% static "main_site/style.css" %}'>
+        <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
         <script
             src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -14,13 +16,28 @@
         </head>
         <body>
             <script src='{% static "Semantic-UI-CSS-master/semantic.js" %}'></script>
-            <div class="ui top fixed menu stackable">
-                <a class="item" href="/home">首頁</a>
-                <a class="item" href="/agenda">議程表</a>
-                <a class="item" href="/view">Q&A</a>
-                <a class="item" href="/submit">我要提問</a>
-                <a class="item" href="/paper">手冊</a>
-            </div>
+            <header id="luxbar" class="luxbar-fixed">
+                <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+                <div class="luxbar-menu luxbar-menu-left luxbar-menu-light">
+                    <ul class="luxbar-navigation">
+                        <li class="luxbar-header">
+                            <a href="#" class="luxbar-brand">LUXBAR</a>
+                            <label class="luxbar-hamburger luxbar-hamburger-doublespin" 
+                            id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+                        </li>
+                        <li class="luxbar-item"><a href="/home">首頁</a></li>
+            
+                        <li class="luxbar-item"><a href="/agenda">議程表</a></li>
+            
+                        <li class="luxbar-item"><a href="/view">Q&amp;A</a></li>
+            
+                        <li class="luxbar-item"><a href="/submit">提問單</a></li>
+            
+                        <li class="luxbar-item"><a href="/paper">資料</a></li>
+                    </ul>
+                </div>
+            </header>
+
             {% block content %}
             {% endblock%}
             
