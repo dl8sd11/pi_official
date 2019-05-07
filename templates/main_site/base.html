@@ -13,39 +13,34 @@
             crossorigin="anonymous"></script>
         
             <title>PI</title>
-        </head>
-        <body>
-            <script src='{% static "Semantic-UI-CSS-master/semantic.js" %}'></script>
-            <header id="luxbar" class="luxbar-fixed">
-                <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
-                <div class="luxbar-menu luxbar-menu-left luxbar-menu-light">
-                    <ul class="luxbar-navigation">
-                        <li class="luxbar-header">
-                            <a href="#" class="luxbar-brand">少年兀的奇幻漂流</a>
-                            <label class="luxbar-hamburger luxbar-hamburger-doublespin" 
-                            id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
-                        </li>
-                        <li class="luxbar-item"><a href="/home">首頁</a></li>
-            
-                        <li class="luxbar-item"><a href="/agenda">議程表</a></li>
-            
-                        <li class="luxbar-item"><a href="/view">Q&amp;A</a></li>
-            
-                        <li class="luxbar-item"><a href="/submit">提問單</a></li>
-            
-                        <li class="luxbar-item"><a href="/paper">資料</a></li>
-                    </ul>
-                </div>
-            </header>
-
-            {% block content %}
-            {% endblock%}
-            
-            
-            <footer>
-                <div class="ui container center aligned">
-                    © Copyright 2019 國立科學工業園區實驗高級中學
-                </div>
-            </footer>
-        </body>
-        </html>
+    </head>
+    <body>
+        <script src='{% static "Semantic-UI-CSS-master/semantic.js" %}'></script>
+        <header id="luxbar" class="luxbar-fixed">
+            <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+            <div class="luxbar-menu luxbar-menu-left luxbar-menu-light">
+                <ul class="luxbar-navigation">
+                    <li class="luxbar-header">
+                        <a href="#" class="luxbar-brand">少年兀的奇幻漂流</a>
+                        <label class="luxbar-hamburger luxbar-hamburger-doublespin" 
+                        id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+                    </li>
+                    <li class="luxbar-item"><a href="/home">首頁</a></li>
+        
+                    <li class="luxbar-item"><a href="/agenda">議程表</a></li>
+        
+                    <li class="luxbar-item"><a href="/view">Q&amp;A</a></li>
+        
+                    <li class="luxbar-item"><a href="/submit">提問單</a></li>
+        
+                    <li class="luxbar-item"><a href="/paper">資料</a></li>
+                </ul>
+            </div>
+        </header>
+        
+        {% block content %}
+        {% endblock%}
+        
+        
+    </body>
+</html>
