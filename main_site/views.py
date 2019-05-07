@@ -9,11 +9,11 @@ def submit_questions(request):
             new_question.content = request.POST['content']
             new_question.cat = request.POST['cat']
             new_question.submit()
-            return view_questions(request)
+            return redirect('view_questions')
         else:
             return render(request,"main_site/submit_question.html")
     else:
-        return redirect('view')
+        return render(request,"main_site/submit_question.html")
 
 def view_questions(request):
     question_list = Question.objects.all()
