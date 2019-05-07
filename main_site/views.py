@@ -13,7 +13,7 @@ def submit_questions(request):
         else:
             return render(request,"main_site/submit_question.html")
     else:
-        return render(request,"main_site/submit_question.html")
+        return redirect('view')
 
 def view_questions(request):
     question_list = Question.objects.all()
