@@ -8,8 +8,8 @@
             <th class="two wide">提問者</th>
             <th class="two wide">類型</th>
             <th class="four wide">標題</th>
-            <th class="six wide">內容</th>
-            <th class="two wide">回答</th>
+            <th class="eight wide">內容</th>
+            <!-- <th class="two wide">回答</th> -->
             </tr>
         </thead>
         <tbody>
@@ -27,7 +27,7 @@
                 <td>
                     {{question.content}}
                 </td>
-                {% if question.seen %}
+                <!-- {% if question.seen %}
                     <td class="positive">
                         已回答  
                     </td>    
@@ -35,7 +35,7 @@
                     <td class="warning">
                         未回答
                     </td>    
-                {% endif %}
+                {% endif %} -->
             </tr>
             {% endfor %}
         </tbody>

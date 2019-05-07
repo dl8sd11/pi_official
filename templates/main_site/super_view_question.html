@@ -28,8 +28,8 @@
                     {{question.content}}
                 </td>
                 {% if question.seen %}
-                    <td class="positive">
-                        已回答  
+                    <td class="positive">  
+                        <a href="/api/response/{{question.id}}">已回答</a>  
                     </td>    
                 {% else %}
                     <td class="warning">
