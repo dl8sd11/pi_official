@@ -11,4 +11,5 @@ urlpatterns = [
     path('agenda',views.view_agenda,name='view_agenda'),
     path('paper',views.view_paper,name='view_paper'),
     path('api/response/<int:id>',views.response_questions,name='response_questions'),
+    path('api/slide/generate',views.generate_slide,name='generate_slide'),
 ]
