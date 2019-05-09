@@ -1,5 +1,7 @@
 from django.shortcuts import render,redirect
 from main_site.models import Question
+import json
+
 def submit_questions(request):
     if request.method == "POST":
         if request.POST['name'] and request.POST['title'] and request.POST['content']:
@@ -37,13 +39,15 @@ def response_questions(request,id):
         return render(request,"main_site/response_question.html",{"question":question})
 
 def view_agenda(request):
-    return render(request,"main_site/agenda.html")
+    with open('agenda.json') as f:
+        agenda = json.load(f)
+    return render(request,"main_site/agenda.html",{'agenda':agenda})
 
 def index(request):
     return render(request,'main_site/index.html',)
 
 def generate_slide(request):
-    questions = Question.objects.exclude(response=None)
+    questions = Question.objects.exclude(response=None).order_by('cat')
     print(questions)
     f = open("slides.md", "a")
     first = True
@@ -51,7 +55,7 @@ def generate_slide(request):
         if not first:
             f.write("---\n\n")
         first = False
-        f.write("## {}\n".format(question.title))
+        f.write("### {}: {}\n".format(question.cat,question.title))
         f.write("{} - by {}\n\n".format(question.content,question.asker))
         if question.response != 'EMPTY':
             f.write("---\n\n")

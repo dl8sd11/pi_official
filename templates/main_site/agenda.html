@@ -9,62 +9,43 @@
             </tr>
         </thead>
         <tbody>
+            {% for agenda_item in agenda%}
             <tr>
-            <td class="center aligned">12：40〜13：10</td>
-            <td class="center aligned">來賓入場</td>
+                <td class="center aligned">{{agenda_item.time}}</td>
+                <td class="center aligned">{{agenda_item.title}}</td>
             </tr>
-            <tr>
-            <td class="center aligned">13：10〜13：20</td>
-            <td class="center aligned">開幕式、致詞</td>
-            </tr>
-            <tr>
-            <td class="center aligned">13：20〜14：50</td>
-            <td class="center aligned">上半場專題
-                    （生物，數學，物理，化學，化學）</td>
-            </tr>
-            <tr>
-            <td class="center aligned">14：50〜15：20</td>
-            <td class="center aligned">中場茶敘</td>
-            </tr>
-            <tr>
-            <td class="center aligned">15：20〜16：40</td>
-            <td class="center aligned">下半場專題
-                    （化學，化學，數學，資訊）</td>
-            </tr>
-            <tr>
-            <td class="center aligned">16：40〜17：00</td>
-            <td class="center aligned">Q&A、閉幕式</td>
-            </tr>
+            {% endfor %}
         </tbody>
     </table>
 </div>
-
-<div class="ui modal" id="mb1">
-    <i class="close icon"></i>
-    <div class="header">
-        議程介紹
-    </div>
-    <div class="image content">
-        <div class="description">
-            <div class="ui header">組別標題</div>
-            <p>內容</p>
+{% for agenda_item in agenda%}
+    <div class="ui modal" id="mb{{agenda_item.id}}">
+        <i class="close icon"></i>
+        <div class="header">
+            議程介紹
+        </div>
+        <div class="image content">
+            <div class="description">
+                <div class="ui header">{{agenda_item.title}}</div>
+                <p>{{agenda_item.introduction}}</p>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui positive button">
+            報告書
+            </div>
         </div>
     </div>
-    <div class="actions">
-        <div class="ui positive button">
-        報告書
-        </div>
-    </div>
-</div>
+{% endfor %}
 
 <script>
 $('#agenda').find('tr').click( function(){
-    $('#mb1')
-      .modal('show')
-    ;
-    // $('#mb'+($(this).index()+1))
+    // $('#mb1')
     //   .modal('show')
     // ;
+    $('#mb'+($(this).index()))
+      .modal('show')
+    ;
 });
 </script>
 {% endblock %}
