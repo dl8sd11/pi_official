@@ -75,4 +75,4 @@ def generate_slide(request):
             f.write("\n---\n\n")
             f.write("{}\n".format(question.response))
     f.close()
-    return redirect('index')
+    return redirect('view_slide')

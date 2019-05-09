@@ -1,8 +1,29 @@
 {% extends 'main_site/base.html' %}
 {% block content %}
+<button class="ui icon button" id="copy">
+    <i class="clone outline icon"></i>
+</button>
+<a class="ui icon button" href="/api/slide/generate">
+    <i class="redo icon"></i>
+</a>
 <pre>
     <code>
 {{slides}}
     </code>
 </pre>
+
+<script>
+var code = `{{slides}}`;
+
+
+$('#copy').click(function copyToClipboard() {
+    const el = document.createElement('textarea');
+    el.value = code;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    alert("copied");
+});
+</script>
 {% endblock %}
