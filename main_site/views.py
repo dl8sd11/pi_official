@@ -46,6 +46,10 @@ def view_agenda(request):
         agenda = json.load(f)
     return render(request,"main_site/agenda.html",{'agenda':agenda})
 
+def view_slide(request):
+    text_slide = open("slides.md", "r").read()
+    return render(request,"main_site/view_slides.html",{'slides':text_slide})
+
 def index(request):
     return render(request,'main_site/index.html',)
 
