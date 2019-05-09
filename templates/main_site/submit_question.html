@@ -1,7 +1,7 @@
 {% extends 'main_site/base.html' %}
 {% block content %}
 <div class="ui container">
-    <form action="/submit" method="POST" class="ui form">
+    <form action="/submit" method="POST" class="ui form" id="question-form">
         {% csrf_token %}
         <div class="field">
             <label>你的名字</label>
