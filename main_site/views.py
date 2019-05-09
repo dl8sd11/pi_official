@@ -32,6 +32,7 @@ def super_view_questions(request):
 def response_questions(request,id):
     question = Question.objects.get(id=id)
     if request.method == "POST":
+        # check if the string not empty
         if request.POST['response']:
             question.seen = True
             question.response = request.POST['response']
