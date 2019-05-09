@@ -24,8 +24,9 @@ def view_questions(request):
 def view_paper(request):
     return render(request,"main_site/view_paper.html")
 
+# view the questions to be response
 def super_view_questions(request):
-    question_list = Question.objects.all()
+    question_list = Question.objects.all().order_by('cat')
     return render(request,"main_site/super_view_question.html",{"questions":question_list})
 
 def response_questions(request,id):
