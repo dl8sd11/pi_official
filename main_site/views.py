@@ -32,9 +32,10 @@ def super_view_questions(request):
 def response_questions(request,id):
     question = Question.objects.get(id=id)
     if request.method == "POST":
-        question.seen = True
-        question.response = request.POST['response']
-        question.save()
+        if request.POST['response']:
+            question.seen = True
+            question.response = request.POST['response']
+            question.save()
         return redirect('super_view_questions')
     else:
         return render(request,"main_site/response_question.html",{"question":question})
