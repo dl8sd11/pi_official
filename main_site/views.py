@@ -56,7 +56,7 @@ def index(request):
 def generate_slide(request):
     questions = Question.objects.exclude(response=None).order_by('cat')
     
-    f = open("slides.md", "a")
+    f = open("slides.md", "w")
     first = True
 
     for question in questions:
