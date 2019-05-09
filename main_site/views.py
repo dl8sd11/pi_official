@@ -51,17 +51,24 @@ def index(request):
 
 def generate_slide(request):
     questions = Question.objects.exclude(response=None).order_by('cat')
-    print(questions)
+    
     f = open("slides.md", "a")
     first = True
+
     for question in questions:
+        # sperate questions with slide page
         if not first:
-            f.write("---\n\n")
+            f.write("\n---\n\n")
         first = False
+
+        # catagory and question title
         f.write("### {}: {}\n".format(question.cat,question.title))
-        f.write("{} - by {}\n\n".format(question.content,question.asker))
+        # question content
+        f.write("{} - by {}\n".format(question.content,question.asker))
+
+        # generate a page for response if the response isn't "EMPTY"
         if question.response != 'EMPTY':
-            f.write("---\n\n")
-            f.write("{}\n\n".format(question.response))
+            f.write("\n---\n\n")
+            f.write("{}\n".format(question.response))
     f.close()
     return redirect('index')
