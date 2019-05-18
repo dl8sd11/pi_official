@@ -42,7 +42,7 @@ def response_questions(request,id):
         return render(request,"main_site/response_question.html",{"question":question})
 
 def view_agenda(request):
-    with open('agenda.json') as f:
+    with open('agenda.json',encoding='utf-8') as f:
         agenda = json.load(f)
     return render(request,"main_site/agenda.html",{'agenda':agenda})
 
