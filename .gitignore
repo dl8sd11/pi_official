@@ -6,3 +6,4 @@ db.sqlite3
 .DS_Store
 slides.md
 main_site/__pycache__/*
+pienv
