@@ -33,10 +33,7 @@ def response_questions(request,id):
     question = Question.objects.get(id=id)
     if request.method == "POST":
         # check if the string not empty
-        if request.POST['response']:
-            question.seen = True
-            question.response = request.POST['response']
-            question.save()
+        question.reply(request.POST['response'])
         return redirect('super_view_questions')
     else:
         return render(request,"main_site/response_question.html",{"question":question})

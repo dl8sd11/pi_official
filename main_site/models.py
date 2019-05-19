@@ -16,6 +16,12 @@ class Question(models.Model):
         self.time = timezone.now()
         self.seen = False
         self.save()
+    
+    def reply(self,res):
+        # unseen when reply is empty
+        self.seen = res != ""
+        self.response = res
+        self.save()
 
     def __str__(self):
         return self.title
