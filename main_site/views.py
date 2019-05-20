@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from main_site.models import Question
 import json
 
@@ -30,7 +30,7 @@ def super_view_questions(request):
     return render(request,"main_site/super_view_question.html",{"questions":question_list})
 
 def response_questions(request,id):
-    question = Question.objects.get(id=id)
+    question = get_object_or_404(Question,id=id)
     if request.method == "POST":
         # check if the string not empty
         question.reply(request.POST['response'])
