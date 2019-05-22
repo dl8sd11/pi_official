@@ -14,97 +14,97 @@
     {
         "id" : 2,
         "title" : "影片 part1",
-        "time" : "12:40~13:10",
+        "time" : "13:20~13:25",
         "introduction" : "介紹內容"
     },
     {
         "id" : 3,
         "title" : "化學-含全氟烷基修飾之聚脯胺酸多肽的合成",
-        "time" : "12:40~13:10",
+        "time" : "13:25~13:40",
         "introduction" : "介紹內容"
     },
     {
         "id" : 4,
         "title" : "數學-群論在計數問題上之應用",
-        "time" : "12:40~13:10",
+        "time" : "13:40~13:55",
         "introduction" : "介紹內容"
     },
     {
         "id" : 5,
         "title" : "物理-關於磁鐵單擺陣列(Magnetic Pendulum Array)運動模式的探討",
-        "time" : "12:40~13:10",
+        "time" : "13:55~14:10",
         "introduction" : "介紹內容"
     },
     {
         "id" : 6,
         "title" : "影片 part2",
-        "time" : "12:40~13:10",
+        "time" : "14:10~14:15",
         "introduction" : "介紹內容"
     },
     {
         "id" : 7,
         "title" : "生物-吃壞腦袋   食品添加物對誘發果蠅過動症狀之初探",
-        "time" : "12:40~13:10",
+        "time" : "14:15~14:30",
         "introduction" : "介紹內容"
     },
     {
         "id" : 8,
         "title" : "化學-光交聯水膠之性質及應用",
-        "time" : "12:40~13:10",
+        "time" : "14:30~14:45",
         "introduction" : "介紹內容"
     },
     {
         "id" : 9,
         "title" : "影片 part3",
-        "time" : "12:40~13:10",
+        "time" : "14:45~14:50",
         "introduction" : "介紹內容"
     },
     {
         "id" : 10,
         "title" : "中場茶敘",
-        "time" : "12:40~13:10",
+        "time" : "14:50~15:20",
         "introduction" : "介紹內容"
     },
     {
         "id" : 11,
         "title" : "影片 part4",
-        "time" : "12:40~13:10",
+        "time" : "15:20~15:25",
         "introduction" : "介紹內容"
     },
     {
         "id" : 12,
         "title" : "化學-可不可以別那麼「電」—不同電化學處理對泡沫鎳鐵電解水過電位的影響",
-        "time" : "12:40~13:10",
+        "time" : "15:25~15:40",
         "introduction" : "介紹內容"
     },
     {
         "id" : 13,
         "title" : "化學-探討奈米晶體之仿酵素活性及其比較",
-        "time" : "12:40~13:10",
+        "time" : "15:40~15:55",
         "introduction" : "介紹內容"
     },
     {
         "id" : 14,
         "title" : "影片 part5",
-        "time" : "12:40~13:10",
+        "time" : "15:55~16:00",
         "introduction" : "介紹內容"
     },
     {
         "id" : 15,
         "title" : "數學-another approach to cardinality",
-        "time" : "12:40~13:10",
+        "time" : "16:00~16:15",
         "introduction" : "介紹內容"
     },
     {
         "id" : 16,
         "title" : "資訊-我要成為單機王-通用遊戲破關之人工智慧方法",
-        "time" : "12:40~13:10",
+        "time" : "16:15~16:30",
         "introduction" : "介紹內容"
     },
     {
         "id" : 17,
         "title" : "Q&A、閉幕式",
-        "time" : "12:40~13:10",
+        "time" : "16:30~16:40",
         "introduction" : "介紹內容"
     }
 ]
