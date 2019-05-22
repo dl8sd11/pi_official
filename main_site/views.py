@@ -44,7 +44,7 @@ def view_agenda(request):
     return render(request,"main_site/agenda.html",{'agenda':agenda})
 
 def view_slide(request):
-    text_slide = open("slides.md", "r").read()
+    text_slide = open("slides.md", "r",encoding='utf-8').read()
     return render(request,"main_site/view_slides.html",{'slides':text_slide})
 
 def index(request):
@@ -53,7 +53,7 @@ def index(request):
 def generate_slide(request):
     questions = Question.objects.exclude(response=None).order_by('cat')
     
-    f = open("slides.md", "w")
+    f = open("slides.md", "w",encoding='utf-8')
     first = True
 
     for question in questions:
@@ -62,7 +62,7 @@ def generate_slide(request):
             f.write("\n---\n\n")
         first = False
 
-        # catagory and question title
+	# catagory and question title
         f.write("### {}: {}\n".format(question.cat,question.title))
         # question content
         f.write("{} - by {}\n".format(question.content,question.asker))
