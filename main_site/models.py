@@ -25,3 +25,30 @@ class Question(models.Model):
 
     def __str__(self):
         return self.title
+
+class Project(models.Model):
+    pass
+
+class Author(models.Model):
+    name = models.CharField(max_length=4)
+    Project = models.ForeignKey(Project,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+class Attachment(models.Model):
+    name = models.CharField(max_length=50)
+    path = models.CharField(max_length=50)
+    Project = models.ForeignKey(Project,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+class Group(models.Model):
+    name = models.CharField(max_length=50)
+    order = models.IntegerField()
+    subject = models.CharField(max_length=50)
+    Project = models.OneToOneField(Project,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
