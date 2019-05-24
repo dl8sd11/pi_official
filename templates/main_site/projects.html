@@ -1,0 +1,20 @@
+{% extends 'main_site/base.html' %}
+{% block content %}
+<div class="ui container">
+    {% for project in projects %}
+    <div class="ui segment">
+        <p>{{project.group.subject}}組 &nbsp;&nbsp;{{project.group.name}}</p>
+        <p>作者:
+            {% for author in project.author_set.all %}
+                <a class="ui green basic label">{{author.name}}</a>
+            {% endfor %}
+        </p>
+        {% for attachment in project.attachment_set.all %}
+            <div class="ui segment">
+                <a href="static/projects/{{attachment.path}}">{{attachment.name}}</a>
+            </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
