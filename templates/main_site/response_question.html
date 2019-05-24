@@ -16,7 +16,9 @@
             {{question.content}}
         </div>
         <div class="field">
-            <textarea name="response">{{question.response}}</textarea>
+            <textarea name="response">{% if question.response %}
+                {{question.response}}
+            {% endif %}</textarea>
         </div>
         <input type="submit" class="ui submit button" value="回覆">
     </form>
