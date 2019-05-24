@@ -13,4 +13,5 @@ urlpatterns = [
     path('api/response/<int:id>',views.response_questions,name='response_questions'),
     path('api/slide/generate',views.generate_slide,name='generate_slide'),
     path('api/slide/view',views.view_slide,name='view_slide'),
+    path('project',views.view_project,name='view_project'),
 ]
