@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect,get_object_or_404
-from main_site.models import Question
+from main_site.models import Question,Project
 import json
 
 def submit_questions(request):
@@ -25,7 +25,8 @@ def view_paper(request):
     return render(request,"main_site/view_paper.html")
 
 def view_project(request):
-    return render(request,"main_site/projects.html")
+    projects = Project.objects.all()
+    return render(request,"main_site/projects.html",{"projects":projects})
 
 # view the questions to be response
 def super_view_questions(request):
