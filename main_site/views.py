@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect,get_object_or_404
-from main_site.models import Question,Project
+from main_site.models import Question,Project,Group
 import json
 
 def submit_questions(request):
@@ -10,15 +10,20 @@ def submit_questions(request):
             new_question.title = request.POST['title']
             new_question.content = request.POST['content']
             new_question.cat = request.POST['cat']
+            if request.POST['cat'] is "一般":
+                new_question.order = get_object_or_404(Group,name=request.POST['cat']).order
+            else:
+                new_question.order = -1
             new_question.submit()
             return redirect('view_questions')
         else:
-            return render(request,"main_site/submit_question.html")
+            return redirect('view_questions')
     else:
-        return render(request,"main_site/submit_question.html")
+        groups = Group.objects.all().order_by('order')
+        return render(request,"main_site/submit_question.html",{"groups":groups})
 
 def view_questions(request):
-    question_list = Question.objects.all()
+    question_list = Question.objects.all().order_by("order")
     return render(request,"main_site/view_question.html",{"questions":question_list})
 
 def view_paper(request):
@@ -30,7 +35,7 @@ def view_project(request):
 
 # view the questions to be response
 def super_view_questions(request):
-    question_list = Question.objects.all().order_by('cat')
+    question_list = Question.objects.all().order_by('order')
     return render(request,"main_site/super_view_question.html",{"questions":question_list})
 
 def response_questions(request,id):
@@ -55,7 +60,7 @@ def index(request):
     return render(request,'main_site/index.html',)
 
 def generate_slide(request):
-    questions = Question.objects.exclude(response=None).order_by('cat')
+    questions = Question.objects.exclude(response=None).order_by('order')
     
     f = open("slides.md", "w",encoding='utf-8')
     first = True
