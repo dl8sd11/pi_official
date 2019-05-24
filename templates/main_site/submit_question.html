@@ -19,16 +19,9 @@
             <i class="dropdown icon"></i>
             <div class="menu">
               <div class="item" data-value="一般">一般</div>
-              <div class="item" data-value="網頁">網頁</div>
-              <div class="item" data-value="數學-another approach to cardinality">數學-another approach to cardinality</div>
-              <div class="item" data-value="數學-群論在計數問題上之應用">數學-群論在計數問題上之應用</div>
-              <div class="item" data-value="物理-關於磁鐵單擺陣列運動模式的探討">物理-關於磁鐵單擺陣列運動模式的探討</div>
-              <div class="item" data-value="化學-可不可以別那麼「電」">化學-可不可以別那麼「電」</div>
-              <div class="item" data-value="化學-含全氟烷基修飾之聚脯胺酸多肽的合成">化學-含全氟烷基修飾之聚脯胺酸多肽的合成</div>
-              <div class="item" data-value="化學-探討奈米晶體之仿酵素活性及其比較">化學-探討奈米晶體之仿酵素活性及其比較</div>
-              <div class="item" data-value="化學-光交聯水膠之性質及應用">化學-光交聯水膠之性質及應用</div>
-              <div class="item" data-value="生物-食品添加物對誘發果蠅過動症狀之初探">生物-食品添加物對誘發果蠅過動症狀之初探</div>
-              <div class="item" data-value="資訊-我要成為單機王">資訊-我要成為單機王</div>
+              {% for group in groups %}
+              <div class="item" data-value="{{group.name}}">{{group.name}}</div>
+              {% endfor %}
             </div>
           </div>
         </div>
