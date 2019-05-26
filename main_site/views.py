@@ -10,9 +10,7 @@ def burn_side(request):
             return render(request,'main_site/burn_side.html')
         else:
             return render(request,'main_site/burn_side.html',{
-                'ans' : agent.solve(),
-                'n' : request.GET.get('n'),
-                'k' : request.GET.get('k')
+                'res' : agent.solve()
             })
     else:
         return render(request,'main_site/burn_side.html')
