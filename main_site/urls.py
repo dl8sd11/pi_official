@@ -14,4 +14,5 @@ urlpatterns = [
     path('api/slide/generate',views.generate_slide,name='generate_slide'),
     path('api/slide/view',views.view_slide,name='view_slide'),
     path('project',views.view_project,name='view_project'),
+    path('m1/burnside',views.burn_side,name='burn_side')
 ]

@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect,get_object_or_404
 from main_site.models import Question,Project,Group
 import json
 
+def burn_side(request):
+    pass
 def submit_questions(request):
     if request.method == "POST":
         if request.POST['name'] and request.POST['title'] and request.POST['content']:
