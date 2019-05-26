@@ -18,6 +18,7 @@
         </tbody>
     </table>
 </div>
+{% load nbsp %}
 {% for agenda_item in agenda%}
     <div class="ui modal" id="mb{{agenda_item.id}}">
         <i class="close icon"></i>
@@ -27,7 +28,7 @@
         <div class="image content">
             <div class="description">
                 <div class="ui header">{{agenda_item.title}}</div>
-                <p>{{agenda_item.introduction}}</p>
+                <p>{{agenda_item.introduction|nbsp}}</p>
             </div>
         </div>
         <div class="actions">
