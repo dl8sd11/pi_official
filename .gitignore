@@ -2,7 +2,6 @@
 *~
 pi_official/__pycache__/*
 db.sqlite3
-/static
 .DS_Store
 slides.md
 main_site/__pycache__/*
