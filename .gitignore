@@ -7,3 +7,4 @@ slides.md
 main_site/__pycache__/*
 pienv
 venv
+.vscode
