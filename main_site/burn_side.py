@@ -145,11 +145,11 @@ class BurnSide:
         if j == self.len:
             d = 1
             for i in range(self.len):
-                d *= math.pow(self.prime_divs[i][0],exponent[i])
-            phi = self.n/d
+                d *= int(math.pow(self.prime_divs[i][0],exponent[i]))
+            phi = self.n//d
             for i in range(self.len):
                 if self.prime_divs[i][1] - exponent[i] != 0:
-                    phi = phi * (self.prime_divs[i][0] - 1)/self.prime_divs[i][0]
+                    phi = phi * (self.prime_divs[i][0] - 1)//self.prime_divs[i][0]
             if self.neg:
                 self.poly.append((-d,phi))
             else:
@@ -176,18 +176,18 @@ class BurnSide:
                     self.poly[i] = (first,second+self.n//2)
                     b = True
             if not a:
-                self.poly.append((self.n/2,self.n/2))
+                self.poly.append((self.n//2,self.n//2))
             if not b:
-                self.poly.append((self.n/2+1,self.n/2))
+                self.poly.append((self.n//2+1,self.n//2))
         else:
             a = False
             for i in range(len(self.poly)):
                 first,second = self.poly[i]
-                if first == (self.n+1)/2:
+                if first == (self.n+1)//2:
                     self.poly[i] = (first,second+self.n)
                     a = True
             if not a:
-                self.poly.append(((self.n+1)/2,self.n))
+                self.poly.append(((self.n+1)//2,self.n))
         self.poly.sort(key=self.poly_expo)
 
         
