@@ -7,7 +7,7 @@ class AttachmentInline(admin.StackedInline):
 
 class GroupInline(admin.TabularInline):
     model = Group
-    extra = 0
+    extra = 1
 
 class AuthorInline(admin.StackedInline):
     model = Author
