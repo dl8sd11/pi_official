@@ -11,7 +11,7 @@
         </p>
         {% for attachment in project.attachment_set.all %}
             <div class="ui segment">
-                <a href="static/projects/{{attachment.path}}">{{attachment.name}}</a>
+                <a href="{{attachment.path}}">{{attachment.name}}</a>
             </div>
         {% endfor %}
     </div>
