@@ -30,7 +30,7 @@ def view_paper(request):
     return render(request,"main_site/view_paper.html")
 
 def view_project(request):
-    projects = Project.objects.all()
+    projects = Project.objects.all().order_by("group__order")
     return render(request,"main_site/projects.html",{"projects":projects})
 
 # view the questions to be response
