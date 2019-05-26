@@ -7,15 +7,27 @@ class BurnSide:
         self.neg = False
         self.prime_divs = []
         self.poly = []
+        self.res = ""
     def solve(self):
         if self.n == 0:
-            return 0
+            return "Result >> 0.0000000000\n"
         elif self.n < 0:
-            self.n = -n
+            self.n = -self.n
             self.neg = True
         self.result = 0
         self.factorize(self.n) # generate prime_divs
         self.len = len(self.prime_divs)
+
+        self.res += "Prime Divisors: "
+        for p in self.prime_divs:
+            self.res += "{: 5x} ".format(p[0])
+        self.res += "\n"
+        
+        self.res += "Prime Div expo: ";
+        for p in self.prime_divs:
+            self.res += "{: 5x} ".format(p[1])
+        self.res += "\n\n"
+
         exponent = [0 for i in range(self.len)]
         self.rotate(exponent,0)
         self.polynomial()
@@ -25,10 +37,15 @@ class BurnSide:
         if self.neg and self.result != 0:
             self.result = - self.result
 
+        if self.k == 0:
+            self.res += "\n\nResult >> 0.0000000000\n"
+        else:
+            self.res += "\n\nResult >> {:.10}\n".format(self.result)
+        
         self.prime_divs.clear()
         self.poly.clear()
         self.neg = False
-        return self.result
+        return self.res
         
     def miller_robin(self,m,primes):
         if m < 2:
@@ -172,5 +189,17 @@ class BurnSide:
             if not a:
                 self.poly.append(((self.n+1)/2,self.n))
         self.poly.sort(key=self.poly_expo)
+
+        
+        self.res += "["
+        for i in range(len(self.poly)-1):
+            self.res += "({} * k ^ {}) + ".format(self.poly[i][1],self.poly[i][0])
+        self.res += "({} * k ^ {})] / ".format(self.poly[len(self.poly)-1][1],self.poly[len(self.poly)-1][0])
+
+        if self.neg:
+            self.res += "({})".format(self.n * 2)
+        else:
+            self.res += "{}".format(self.n * 2)
+
         if self.neg:
             self.n = -self.n
