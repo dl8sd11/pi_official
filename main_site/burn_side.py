@@ -20,12 +20,12 @@ class BurnSide:
 
         self.res += "Prime Divisors: "
         for p in self.prime_divs:
-            self.res += "{: 5x} ".format(p[0])
+            self.res += "{: 5x} ".format(int(p[0]))
         self.res += "\n"
         
         self.res += "Prime Div expo: ";
         for p in self.prime_divs:
-            self.res += "{: 5x} ".format(p[1])
+            self.res += "{: 5x} ".format(int(p[1]))
         self.res += "\n\n"
 
         exponent = [0 for i in range(self.len)]
@@ -40,7 +40,7 @@ class BurnSide:
         if self.k == 0:
             self.res += "\n\nResult >> 0.0000000000\n"
         else:
-            self.res += "\n\nResult >> {:.10}\n".format(self.result)
+            self.res += "\n\nResult >> {:.10f}\n".format(self.result)
         
         self.prime_divs.clear()
         self.poly.clear()
