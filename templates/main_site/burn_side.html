@@ -1,0 +1,37 @@
+{% extends 'main_site/base.html' %}
+{% block content %}
+<div class="ui container">
+  <div class="ui segment">
+    <form action="" method="GET" class="ui form" id="question-form">
+        {% csrf_token %}
+        <div class="field">
+            <label>N</label>
+            <input type="text" name="n" placeholder="整數">
+        </div>
+        <div class="field">
+            <label>K</label>
+            <input type="text" name="k" placeholder="有號小數">
+        </div>
+        <input type="submit" class="ui submit button" value="submit">
+        <div class="ui error message"></div>
+    </form>
+    {% if ans %}
+    <div class="ui segment">
+        Input : n = {{n}}, k = {{k}}<br>
+        Output : {{ans}}
+    </div>
+    {% endif %}
+  </div>
+<script>
+$('.ui.dropdown')
+.dropdown();
+$('.ui.form')
+  .form({
+    fields: {
+      name: 'empty',
+      title: 'empty',
+      content: 'empty',
+    }
+  });
+</script>
+{% endblock %}

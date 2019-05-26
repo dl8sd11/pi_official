@@ -1,9 +1,21 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from main_site.models import Question,Project,Group
 import json
-
+from .burn_side import BurnSide
 def burn_side(request):
-    pass
+    if request.GET.get('n') and request.GET.get('k'):
+        try:
+            agent = BurnSide(int(request.GET.get('n')),float(request.GET.get('k')))
+        except ValueError:
+            return render(request,'main_site/burn_side.html')
+        else:
+            return render(request,'main_site/burn_side.html',{
+                'ans' : agent.solve(),
+                'n' : request.GET.get('n'),
+                'k' : request.GET.get('k')
+            })
+    else:
+        return render(request,'main_site/burn_side.html')
 def submit_questions(request):
     if request.method == "POST":
         if request.POST['name'] and request.POST['title'] and request.POST['content']:
