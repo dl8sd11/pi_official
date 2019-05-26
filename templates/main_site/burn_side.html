@@ -15,10 +15,10 @@
         <input type="submit" class="ui submit button" value="submit">
         <div class="ui error message"></div>
     </form>
-    {% if ans %}
+    {% if res %}
     <div class="ui segment">
-        Input : n = {{n}}, k = {{k}}<br>
-        Output : {{ans}}
+        {% load nbsp %}
+        <p>{{res|nbsp}}</p>
     </div>
     {% endif %}
   </div>
