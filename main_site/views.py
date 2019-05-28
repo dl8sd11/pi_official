@@ -101,7 +101,8 @@ def index(request):
 
 
 def generate_slide(request):
-    questions = Question.objects.exclude(response=None).order_by('order')
+    questions = Question.objects.exclude(response=None)\
+                .exclude(response="").order_by('order')
 
     f = open("slides.md",  "w", encoding='utf-8')
     first = True
