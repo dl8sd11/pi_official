@@ -6,6 +6,7 @@ db.sqlite3
 slides.md
 main_site/__pycache__/*
 pienv
+pi_official/settings.py
 venv
 .vscode
 main_site/migrations/*
