@@ -50,9 +50,9 @@ class Attachment(models.Model):
 
 
 class Group(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=150)
     order = models.IntegerField()
-    subject = models.CharField(max_length=50)
+    subject = models.CharField(max_length=150)
     Project = models.OneToOneField(Project, on_delete=models.CASCADE)
 
     def __str__(self):
