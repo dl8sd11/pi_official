@@ -22,15 +22,16 @@ def burn_side(request):
 def submit_questions(request):
     if request.method == "POST":
         if request.POST['name'] and request.POST['title'] and\
-             request.POST['content']:
+                request.POST['content']:
+            catagory = request.POST['cat'].replace('&quot;', '\"')
             new_question = Question()
             new_question.asker = request.POST['name']
             new_question.title = request.POST['title']
             new_question.content = request.POST['content']
-            new_question.cat = request.POST['cat']
-            if request.POST['cat'] != "一般":
+            new_question.cat = catagory
+            if catagory != "一般":
                 new_question.order = get_object_or_404(
-                    Group, name=request.POST['cat']).order
+                    Group, name=catagory).order
             else:
                 new_question.order = -1
             new_question.submit()
