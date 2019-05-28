@@ -5,4 +5,5 @@ register = template.Library()
 
 @register.filter()
 def nbsp(value):
-    return mark_safe("<br>".join(("&nbsp;".join(value.split(' '))).split('\n')))
+    space_str = "&nbsp;".join(value.split(' '))
+    return mark_safe("<br>".join(space_str.split('\n')))
