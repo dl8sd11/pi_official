@@ -36,3 +36,7 @@ pre {
     display: block;
     word-wrap: break-word;
 }
+
+.description {
+    width: 100%;
+}
