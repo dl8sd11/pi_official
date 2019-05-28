@@ -8,3 +8,4 @@ main_site/__pycache__/*
 pienv
 venv
 .vscode
+ main_site/migrations/*
