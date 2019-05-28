@@ -29,8 +29,8 @@ def submit_questions(request):
             new_question.content = request.POST['content']
             new_question.cat = request.POST['cat']
             if request.POST['cat'] == "一般":
-                new_question.order = get_object_or_404
-                (Group, name=request.POST['cat']).order
+                new_question.order = get_object_or_404(
+                    Group, name=request.POST['cat']).order
             else:
                 new_question.order = -1
             new_question.submit()
