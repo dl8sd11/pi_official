@@ -196,8 +196,8 @@ class BurnSide:
 
         self.res += "["
         for i in range(len(self.poly)-1):
-            self.res += "({} * k ^ {}) + ".format
-            (self.poly[i][1], self.poly[i][0])
+            self.res += "({} * k ^ {}) + ".format(self.poly[i][1],
+                                                  self.poly[i][0])
         self.res += "({} * k ^ {})] / ".format(self.poly[len(self.poly)-1][1],
                                                self.poly[len(self.poly)-1][0])
 
